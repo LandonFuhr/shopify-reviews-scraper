@@ -33,8 +33,9 @@ class StarCounts:
     four_stars: int
     five_stars: int
     stars_count_list: List[int]
-    average_rating: int
+    average_rating: float
 
+    @staticmethod
     def from_list(rating_counts: List[int], average_rating: float) -> StarCounts:
         return StarCounts(
             total=sum(rating_counts),

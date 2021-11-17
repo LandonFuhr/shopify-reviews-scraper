@@ -9,7 +9,7 @@ def get_relative_path(rel_path: str) -> str:
     return str(Path(Path(__file__).parent.resolve(), rel_path))
 
 
-def get_test_soup(html_file_path: str) -> ReviewsPageParser:
+def get_test_soup(html_file_path: str) -> BeautifulSoup:
     real_path = get_relative_path(html_file_path)
     with open(real_path, 'r') as f:
         return BeautifulSoup(f, 'lxml')
