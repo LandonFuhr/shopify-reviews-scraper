@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+flask = "*"
+gunicorn = "*"
+
+[dev-packages]
+mypy = "*"
+pytest = "*"
+types-requests = "*"
+types-beautifulsoup4 = "*"
+autopep8 = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+# Development
+dev = "python main.py"
+test = "pytest"
+lint = "mypy main.py"
+# Production
+docker_build = "docker build -t reviews ."
+docker_run = "docker run -d -p 8000:8000 reviews"
+start = "gunicorn --bind :8000 --workers 1 --threads 8 --timeout 0 main:server"

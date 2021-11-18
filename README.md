@@ -1,9 +1,15 @@
 ## First-time Setup
 
-1. Create virtual environment: `python3 -m venv venv`
-2. Activate virtual environment: `source ./venv/bin/activate`
-3. Install dependencies: `pip install -r requirements.txt`
+1. Install pipenv: `pip3 install pipenv`
+   > Pipenv is the `npm` of Python projects
 
-## Run
+## Deployment
 
-- `python main.py`
+1. Build docker container: `pipenv run docker_build`
+2. Start docker container: `pipenv run docker_run`
+
+## Development scripts
+
+- Dev server: `pipenv run dev`
+- Testing: `pipenv run test`
+- Type checking: `pipenv run lint`
