@@ -17,7 +17,7 @@ def get_review_counts():
     return jsonify(all_star_counts)
 
 
-@server.route('/reviews')
+@server.route('/messages')
 def get_review_data():
     app_name = request.args.get('app', type=str)
     page = request.args.get('page', default=1, type=int)
